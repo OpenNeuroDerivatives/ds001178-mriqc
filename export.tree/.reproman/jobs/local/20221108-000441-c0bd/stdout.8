@@ -1,0 +1,242 @@
+[ReproMan] pre-command...
+[ReproMan] executing command code/containers/scripts/singularity_cmd run code/containers/images/bids/bids-mriqc--22.0.6.sing sourcedata/raw /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds001178-mriqc participant --participant-label 'ben06' -w '/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06' -vv --nprocs 11 --ants-nthreads 8 --verbose-reports --dsname ds001178 --ica --mem_gb 30
+[ReproMan] ... within /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds001178-mriqc
+221108-10:12:41,441 cli IMPORTANT:
+	 
+    Running MRIQC version 22.0.6:
+      * BIDS dataset path: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds001178-mriqc/sourcedata/raw.
+      * Output folder: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds001178-mriqc.
+      * Analysis levels: ['participant'].
+
+221108-10:12:41,592 nipype.workflow INFO:
+	 Building functional MRIQC workflow for files: /scratch1/03201/jbwexler/openneuro_derivatives/derivatives/mriqc/ds001178-mriqc/sourcedata/raw/sub-ben06/func/sub-ben06_task-unknown_bold.nii.gz.
+221108-10:13:49,578 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+221108-10:13:49,743 nipype.workflow INFO:
+	 Workflow mriqc_wf settings: ['check', 'execution', 'logging', 'monitoring']
+221108-10:13:49,884 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/metadata".
+221108-10:13:49,885 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.non_steady_state_detector" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/non_steady_state_detector".
+221108-10:13:49,896 nipype.workflow INFO:
+	 [Node] Executing "metadata" <niworkflows.interfaces.bids.ReadSidecarJSON>
+221108-10:13:49,896 nipype.workflow INFO:
+	 [Node] Executing "non_steady_state_detector" <nipype.algorithms.confounds.NonSteadyStateDetector>
+221108-10:13:50,141 nipype.workflow INFO:
+	 [Node] Finished "non_steady_state_detector", elapsed time 0.230111s.
+221108-10:13:50,665 nipype.workflow INFO:
+	 [Node] Finished "metadata", elapsed time 0.754213s.
+221108-10:13:50,768 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.provenance" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/provenance".
+221108-10:13:50,773 nipype.workflow INFO:
+	 [Node] Executing "provenance" <mriqc.interfaces.reports.AddProvenance>
+221108-10:13:50,782 nipype.workflow INFO:
+	 [Node] Finished "provenance", elapsed time 0.007761s.
+221108-10:13:51,861 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.sanitize" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/sanitize".
+221108-10:13:51,868 nipype.workflow INFO:
+	 [Node] Executing "sanitize" <niworkflows.interfaces.header.SanitizeImage>
+221108-10:13:52,94 nipype.workflow INFO:
+	 [Node] Finished "sanitize", elapsed time 0.226142s.
+221108-10:13:53,877 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.motion_correct" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/motion_correct".
+221108-10:13:53,886 nipype.workflow INFO:
+	 [Node] Executing "motion_correct" <nipype.interfaces.afni.preprocess.Volreg>
+221108-10:13:53,886 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/SpikesMask".
+221108-10:13:53,899 nipype.workflow INFO:
+	 [Node] Executing "SpikesMask" <nipype.interfaces.utility.wrappers.Function>
+221108-10:13:55,259 nipype.workflow INFO:
+	 [Node] Finished "SpikesMask", elapsed time 1.359007s.
+221108-10:13:55,898 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.SpikesFinderBgMask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/SpikesFinderBgMask".
+221108-10:13:55,905 nipype.workflow INFO:
+	 [Node] Executing "SpikesFinderBgMask" <mriqc.interfaces.functional.Spikes>
+221108-10:13:56,61 nipype.workflow INFO:
+	 [Node] Finished "SpikesFinderBgMask", elapsed time 0.15522s.
+221108-10:14:08,665 nipype.workflow INFO:
+	 [Node] Finished "motion_correct", elapsed time 14.777984s.
+221108-10:14:09,896 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRI_HMC.ComputeFD" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/fMRI_HMC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/ComputeFD".
+221108-10:14:09,897 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.mean" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/mean".
+221108-10:14:09,903 nipype.workflow INFO:
+	 [Node] Executing "ComputeFD" <nipype.algorithms.confounds.FramewiseDisplacement>
+221108-10:14:09,905 nipype.workflow INFO:
+	 [Node] Executing "mean" <nipype.interfaces.afni.utils.TStat>
+221108-10:14:09,907 nipype.workflow INFO:
+	 [Node] Finished "ComputeFD", elapsed time 0.002567s.
+221108-10:14:09,907 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.compute_tsnr" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/compute_tsnr".
+221108-10:14:09,914 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.quality" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/quality".
+221108-10:14:09,917 nipype.workflow INFO:
+	 [Node] Executing "compute_tsnr" <nipype.algorithms.confounds.TSNR>
+221108-10:14:09,921 nipype.workflow INFO:
+	 [Node] Executing "quality" <nipype.interfaces.afni.preprocess.QualityIndex>
+221108-10:14:10,176 nipype.workflow INFO:
+	 [Node] Finished "compute_tsnr", elapsed time 0.258363s.
+221108-10:14:10,762 nipype.workflow INFO:
+	 [Node] Finished "quality", elapsed time 0.840548s.
+221108-10:14:10,763 nipype.workflow INFO:
+	 [Node] Finished "mean", elapsed time 0.857333s.
+221108-10:14:11,924 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.SpatialNormalization.SharpenEPI" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/SpatialNormalization/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/SharpenEPI".
+221108-10:14:11,924 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.fMRIBrainMask.afni_msk" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/fMRIBrainMask/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/afni_msk".
+221108-10:14:11,925 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.PlotMosaicMean" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/PlotMosaicMean".
+221108-10:14:11,925 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.PlotMosaicNoise" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/PlotMosaicNoise".
+221108-10:14:11,931 nipype.workflow INFO:
+	 [Node] Executing "SharpenEPI" <nipype.interfaces.ants.segmentation.N4BiasFieldCorrection>
+221108-10:14:11,932 nipype.workflow INFO:
+	 [Node] Executing "PlotMosaicMean" <mriqc.interfaces.viz.PlotMosaic>
+221108-10:14:11,932 nipype.workflow INFO:
+	 [Node] Executing "PlotMosaicNoise" <mriqc.interfaces.viz.PlotMosaic>
+221108-10:14:11,933 nipype.workflow INFO:
+	 [Node] Executing "afni_msk" <nipype.interfaces.afni.preprocess.Automask>
+221108-10:14:11,934 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.PlotMosaicSD" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/PlotMosaicSD".
+221108-10:14:11,944 nipype.workflow INFO:
+	 [Node] Executing "PlotMosaicSD" <mriqc.interfaces.viz.PlotMosaic>
+221108-10:14:12,175 nipype.workflow INFO:
+	 [Node] Finished "afni_msk", elapsed time 0.241032s.
+221108-10:14:13,670 nipype.workflow INFO:
+	 [Node] Finished "SharpenEPI", elapsed time 1.596246s.
+221108-10:14:13,956 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ICA" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/ICA".
+221108-10:14:13,956 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.ComputeDVARS" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/ComputeDVARS".
+221108-10:14:13,963 nipype.workflow INFO:
+	 [Node] Executing "ComputeDVARS" <nipype.algorithms.confounds.ComputeDVARS>
+221108-10:14:13,964 nipype.workflow INFO:
+	 [Node] Executing "ICA" <niworkflows.interfaces.reportlets.segmentation.MELODICRPT>
+221108-10:14:13,967 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.smoothness" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/smoothness".
+221108-10:14:13,976 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.outliers" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/outliers".
+221108-10:14:13,977 nipype.workflow INFO:
+	 [Node] Executing "smoothness" <nipype.interfaces.afni.utils.FWHMx>
+221108-10:14:13,983 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.gcor" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/gcor".
+221108-10:14:13,985 nipype.workflow INFO:
+	 [Node] Executing "outliers" <nipype.interfaces.afni.preprocess.OutlierCount>
+221108-10:14:13,992 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.dilated_mask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/dilated_mask".
+221108-10:14:13,994 nipype.workflow INFO:
+	 [Node] Executing "gcor" <mriqc.interfaces.transitional.GCOR>
+221108-10:14:14,0 nipype.workflow INFO:
+	 [Node] Executing "dilated_mask" <niworkflows.interfaces.morphology.BinaryDilation>
+221108-10:14:14,1 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.PlotBrainmask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/PlotBrainmask".
+221108-10:14:14,10 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.PlotMosaicZoomed" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/PlotMosaicZoomed".
+221108-10:14:14,12 nipype.workflow INFO:
+	 [Node] Executing "PlotBrainmask" <mriqc.interfaces.viz.PlotContours>
+221108-10:14:14,21 nipype.workflow INFO:
+	 [Node] Executing "PlotMosaicZoomed" <mriqc.interfaces.viz.PlotMosaic>
+221108-10:14:14,237 nipype.workflow INFO:
+	 [Node] Finished "dilated_mask", elapsed time 0.236029s.
+221108-10:14:15,207 nipype.workflow INFO:
+	 [Node] Finished "outliers", elapsed time 1.220419s.
+221108-10:14:15,446 nipype.workflow INFO:
+	 [Node] Finished "PlotMosaicMean", elapsed time 3.513524s.
+221108-10:14:15,533 nipype.workflow INFO:
+	 [Node] Finished "PlotMosaicSD", elapsed time 3.587383s.
+221108-10:14:15,614 nipype.workflow INFO:
+	 [Node] Finished "PlotMosaicNoise", elapsed time 3.681673s.
+221108-10:14:15,958 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.subtract_mask" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/subtract_mask".
+221108-10:14:15,965 nipype.workflow INFO:
+	 [Node] Executing "subtract_mask" <niworkflows.interfaces.morphology.BinarySubtraction>
+221108-10:14:15,981 nipype.workflow INFO:
+	 [Node] Finished "subtract_mask", elapsed time 0.014847s.
+221108-10:14:16,911 nipype.workflow INFO:
+	 [Node] Finished "smoothness", elapsed time 2.932949s.
+221108-10:14:16,951 nipype.workflow INFO:
+	 [Node] Finished "gcor", elapsed time 2.955611s.
+221108-10:14:17,692 nipype.workflow INFO:
+	 [Node] Finished "PlotMosaicZoomed", elapsed time 3.669718s.
+221108-10:14:17,906 nipype.workflow INFO:
+	 [Node] Finished "PlotBrainmask", elapsed time 3.893682s.
+221108-10:14:17,926 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.SpatialNormalization.EPI2MNI" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/SpatialNormalization/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/EPI2MNI".
+221108-10:14:17,935 nipype.workflow INFO:
+	 [Node] Executing "EPI2MNI" <niworkflows.interfaces.reportlets.registration.SpatialNormalizationRPT>
+221108-10:14:19,35 nipype.workflow INFO:
+	 [Node] Finished "ComputeDVARS", elapsed time 5.070412s.
+221108-10:14:19,929 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.measures" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/measures".
+221108-10:14:19,942 nipype.workflow INFO:
+	 [Node] Executing "measures" <mriqc.interfaces.functional.FunctionalQC>
+221108-10:14:20,183 nipype.workflow INFO:
+	 [Node] Finished "measures", elapsed time 0.240786s.
+221108-10:14:21,926 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.datasink" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/datasink".
+221108-10:14:21,945 nipype.workflow INFO:
+	 [Node] Executing "datasink" <mriqc.interfaces.bids.IQMFileSink>
+221108-10:14:21,950 nipype.workflow INFO:
+	 [Node] Finished "datasink", elapsed time 0.004754s.
+221108-10:14:23,921 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.UploadMetrics" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/UploadMetrics".
+221108-10:14:23,928 nipype.workflow INFO:
+	 [Node] Executing "UploadMetrics" <mriqc.interfaces.webapi.UploadIQMs>
+221108-10:14:23,929 nipype.interface INFO:
+	 MRIQC Web API: submitting to <https://mriqc.nimh.nih.gov:443/api/v1/bold>
+221108-10:14:24,195 nipype.interface INFO:
+	 QC metrics successfully uploaded.
+221108-10:14:24,196 nipype.workflow INFO:
+	 [Node] Finished "UploadMetrics", elapsed time 0.267127s.
+221108-10:14:24,482 nipype.workflow INFO:
+	 [Node] Finished "ICA", elapsed time 10.516925s.
+221108-10:14:53,763 nipype.workflow INFO:
+	 [Node] Finished "EPI2MNI", elapsed time 35.82673s.
+221108-10:14:53,955 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.SpatialNormalization.ResampleSegmentation" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/SpatialNormalization/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/ResampleSegmentation".
+221108-10:14:53,963 nipype.workflow INFO:
+	 [Node] Executing "ResampleSegmentation" <nipype.interfaces.ants.resampling.ApplyTransforms>
+221108-10:14:55,473 nipype.workflow INFO:
+	 [Node] Finished "ResampleSegmentation", elapsed time 1.3205879999999999s.
+221108-10:14:55,967 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.parcels" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/parcels".
+221108-10:14:56,302 nipype.workflow INFO:
+	 [Node] Executing "parcels" <nipype.interfaces.utility.wrappers.Function>
+221108-10:14:56,323 nipype.workflow INFO:
+	 [Node] Finished "parcels", elapsed time 0.02033s.
+221108-10:14:57,962 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.BigPlot" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/BigPlot".
+221108-10:14:57,974 nipype.workflow INFO:
+	 [Node] Executing "BigPlot" <niworkflows.interfaces.plotting.FMRISummary>
+221108-10:14:58,881 nipype.workflow INFO:
+	 [Node] Finished "BigPlot", elapsed time 0.905403s.
+221108-10:14:59,969 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.MergePlots" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/MergePlots".
+221108-10:14:59,992 nipype.workflow INFO:
+	 [Node] Executing "MergePlots" <nipype.interfaces.utility.base.Merge>
+221108-10:14:59,993 nipype.workflow INFO:
+	 [Node] Finished "MergePlots", elapsed time 0.00025s.
+221108-10:15:01,980 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.GenerateReport" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/GenerateReport".
+221108-10:15:01,990 nipype.workflow INFO:
+	 [Node] Executing "GenerateReport" <mriqc.interfaces.reports.IndividualReport>
+221108-10:15:01,994 cli WARNING:
+	 Building bold report: no exclude index was found
+221108-10:15:02,78 cli INFO:
+	 Generated individual log: /scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/GenerateReport/sub-ben06_task-unknown_bold.html
+221108-10:15:02,79 nipype.workflow INFO:
+	 [Node] Finished "GenerateReport", elapsed time 0.087468s.
+221108-10:15:03,997 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ReportsWorkflow.dsplots" in "/scratch1/03201/jbwexler/work_dir/mriqc/ds001178_sub-ben06/mriqc_wf/funcMRIQC/ReportsWorkflow/_in_file_..scratch1..03201..jbwexler..openneuro_derivatives..derivatives..mriqc..ds001178-mriqc..sourcedata..raw..sub-ben06..func..sub-ben06_task-unknown_bold.nii.gz/dsplots".
+221108-10:15:04,4 nipype.workflow INFO:
+	 [Node] Executing "dsplots" <nipype.interfaces.io.DataSink>
+221108-10:15:04,37 nipype.workflow INFO:
+	 [Node] Finished "dsplots", elapsed time 0.031859s.
+221108-10:15:05,941 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+221108-10:15:05,941 cli IMPORTANT:
+	 Participant level finished successfully.
+221108-10:15:05,941 cli INFO:
+	 Generating BIDS derivatives metadata.
+221108-10:15:05,944 cli INFO:
+	 MRIQC completed.
